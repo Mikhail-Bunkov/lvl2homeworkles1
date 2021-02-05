@@ -1,6 +1,6 @@
 package homework;
 
 public interface Functionable {
-    void run();
-    void jump();
+    boolean run(int dist);
+    boolean jump(int dist);
 }

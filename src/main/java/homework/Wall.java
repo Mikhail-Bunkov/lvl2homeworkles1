@@ -1,10 +1,28 @@
 package homework;
 
-import javax.naming.OperationNotSupportedException;
 
-public class Wall {
-    public void overcomming(Functionable f)
+public class Wall implements FunctionOfBarrier {
+    private int maxDist;
+
+    public Wall(int maxDist) {
+        this.maxDist = maxDist;
+    }
+
+    public int getMaxDist() {
+        return maxDist;
+    }
+
+    public void setMaxDist(int maxDist) {
+        this.maxDist = maxDist;
+    }
+
+    public void overcoming(Functionable f)
     {
-        f.jump();
+        if(f.run(maxDist)){
+            System.out.println(f.getClass().getName() + " Успешно прыгнул");
+        }else
+        {
+            System.out.println(f.getClass().getName()+"Не перепрыгнул");
+        }
     }
 }
